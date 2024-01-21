@@ -48,6 +48,9 @@ export default {
             async handler(props) {
                 const { labels, newChartData } = props
 
+                if (!labels || !newChartData)
+                    throw new Error('labels or newChartData not defined')
+
                 this.chartLabels = labels
                 this.chartData = newChartData
 
