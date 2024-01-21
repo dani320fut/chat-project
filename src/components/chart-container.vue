@@ -263,7 +263,7 @@ export default {
 
 @media (max-width: 400px) {
     .container {
-        max-width: 200px;
+        max-width: 300px;
     }
 }
 </style>
