@@ -41,4 +41,9 @@ select {
     cursor: pointer;
     height: 35px;
 }
+@media (max-width: 400px) {
+    select {
+        height: 30px;
+    }
+}
 </style>

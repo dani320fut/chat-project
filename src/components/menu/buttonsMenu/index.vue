@@ -51,7 +51,8 @@ export default {
 .root {
     display: flex;
     justify-content: end;
-    gap: 10px;
+    gap: 5px;
+    padding-left: 10px;
 }
 
 .button {
@@ -77,7 +78,12 @@ export default {
 
 @media (max-width: 400px) {
     .root {
+        padding-left: 0;
         flex-wrap: wrap;
+    }
+    .button {
+        min-width: 25px;
+        height: 30px;
     }
 }
 </style>

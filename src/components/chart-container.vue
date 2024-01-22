@@ -263,10 +263,16 @@ export default {
 
 @media (max-width: 400px) {
     .container {
-        max-width: 75%;
+        border: none;
+        gap: 30px;
     }
     .header {
         gap: 5px;
+        justify-content: center;
+    }
+    .title {
+        font-size: 22px;
+        margin-bottom: 5px;
     }
 }
 </style>
