@@ -1,13 +1,12 @@
-<script setup lang="ts"></script>
-
 <script lang="ts">
 export default {
     name: 'MenuSelect',
     props: ['newSelected'],
+    emits: ['changeSelect'],
     data() {
         return {
-            enterprises: ['All', 'Wikipedia', 'Google', 'Github', 'Example'],
-            selected: 'All'
+            enterprises: ['Todos', 'Wikipedia', 'Google', 'Github', 'Example'],
+            selected: 'Todos'
         }
     },
     watch: {
@@ -24,8 +23,12 @@ export default {
 </script>
 
 <template>
-    <select name="cars" id="cars" @change="selectButton()" v-model="selected">
-        <option v-for="enterprise in enterprises" :value="enterprise">
+    <select id="cars" v-model="selected" name="cars" @change="selectButton()">
+        <option
+            v-for="enterprise in enterprises"
+            :value="enterprise"
+            :key="enterprise"
+        >
             {{ enterprise }}
         </option>
     </select>

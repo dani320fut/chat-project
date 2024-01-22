@@ -1,5 +1,5 @@
 <script lang="ts">
-import { LabelType } from '../../../constants/index'
+import { LabelType } from '../../../../constants/index'
 
 type ButtonData = {
     buttons: string[]

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Menu from './menu/index.vue'
-import LinearChart from './chart.vue'
-import data from '../services/data.json'
+import Chart from './Chart.vue'
+import data from '../../services/data.json'
 import { parseISO, isEqual } from 'date-fns'
-import { LabelType } from '../constants'
+import { LabelType } from '../../constants'
 </script>
 
 <script lang="ts">
@@ -29,7 +29,7 @@ export default {
             labels: [],
             chartData: [],
             newActiveButton: LabelType.YEAR,
-            newSelected: 'All',
+            newSelected: 'Todos',
             labelType: 'Mês'
         } as Data
     },
@@ -40,7 +40,7 @@ export default {
         fetchData() {
             let filteredData: DataChartArray[] = data
 
-            if (this.newSelected !== 'All')
+            if (this.newSelected !== 'Todos')
                 filteredData = data.filter((item) =>
                     item.url.includes(this.newSelected.toLowerCase())
                 )
@@ -219,7 +219,7 @@ export default {
                 :newSelected="newSelected"
             />
         </div>
-        <LinearChart :labels="labels" :newChartData="chartData" />
+        <Chart :labels="labels" :newChartData="chartData" />
         <a class="labelType">{{ labelType }}</a>
     </div>
 </template>

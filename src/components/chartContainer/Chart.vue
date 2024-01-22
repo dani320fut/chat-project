@@ -46,15 +46,19 @@ export default {
     watch: {
         $props: {
             async handler(props) {
-                const { labels, newChartData } = props
+                try {
+                    const { labels, newChartData } = props
 
-                if (!labels || !newChartData)
-                    throw new Error('labels or newChartData not defined')
+                    if (!labels || !newChartData)
+                        throw new Error('labels or newChartData not defined')
 
-                this.chartLabels = labels
-                this.chartData = newChartData
+                    this.chartLabels = labels
+                    this.chartData = newChartData
 
-                this.initLineChart()
+                    this.initLineChart()
+                } catch (err) {
+                    this.errorLoad = true
+                }
             },
             deep: true,
             immediate: true

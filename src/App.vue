@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ChartContainer from './components/chart-container.vue'
+import ChartContainer from './components/chartContainer/index.vue'
 </script>
 
 <template>
